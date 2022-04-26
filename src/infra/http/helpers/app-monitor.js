@@ -28,7 +28,7 @@ const obs = new PerformanceObserver((items) => {
 obs.observe({ entryTypes: ['measure'] })
 
 class AppMonitor {
-  logRequest (msg) {
+  logPerformance (msg) {
     const store = asyncLocalStorage.getStore()
     const { requestId } = store
 
@@ -58,10 +58,10 @@ class AppMonitor {
       res.requestId = reqId
       asyncLocalStorage.enterWith({ requestId: reqId })
 
-      ctx.logRequest('start')
+      ctx.logPerformance('start')
       res.on('finish', () => {
         if (!req.hasError) logAdapter.request.info({ requestId: reqId, method: res.req.method, url: res.req.originalUrl, status: res.statusCode })
-        ctx.logRequest('finish')
+        ctx.logPerformance('finish')
       })
       return emit.apply(this, arguments)
     }
