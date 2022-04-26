@@ -1,5 +1,5 @@
 # Fund That Flip API
-> RESTful api with Domain Driven Design
+> Rot13 Encrypter API (Challenge)
 
 ## Development Environment Setup
 
@@ -26,6 +26,14 @@ Access `http://localhost:3000/api/` and you're ready to go!
 6. Run the application in development mode with `yarn dev`
 7. Access `http://localhost:<PORT>/api` and you're ready to go!
     > http://localhost:3000/api
+8. Encrypt your text:
+```sh
+curl --location --request POST 'http://localhost:3000/api/encrypter/rot13' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "text": "some text"
+}'
+```
 
 ### Database Setup (Development)
 
@@ -37,6 +45,8 @@ Access `http://localhost:3000/api/` and you're ready to go!
 - uses Node.js >= v16.3
 - design inspired on DDD & Clean Architecture
 - written using ES6
+- graceful shutdown
+  > closes app and disconnect from db after all clients requests is finished
 - uses Yarn for package dependency management
 - uses [JavaScript Standard Style](http://standardjs.com/)
 - uses `mongoose` as ODM
