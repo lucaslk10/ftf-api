@@ -60,7 +60,7 @@ class AppMonitor {
 
       ctx.logRequest('start')
       res.on('finish', () => {
-        logAdapter.request.info({ requestId: reqId, method: res.req.method, url: res.req.originalUrl, status: res.statusCode })
+        if (!req.hasError) logAdapter.request.info({ requestId: reqId, method: res.req.method, url: res.req.originalUrl, status: res.statusCode })
         ctx.logRequest('finish')
       })
       return emit.apply(this, arguments)
