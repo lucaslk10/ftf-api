@@ -11,13 +11,7 @@ export function handleErrors (
 ) {
   logError(response, err)
 
-  if (err instanceof AppError) {
-    return response.status(err.statusCode).json({
-      message: err.message
-    })
-  }
-
-  return response.status(httpStatus.HTTP_STATUS_INTERNAL_SERVER_ERROR).json({
+  return response.status(err.statusCode || httpStatus.HTTP_STATUS_INTERNAL_SERVER_ERROR).json({
     message: 'Internal server error',
     info: getInfo(err)
   })
@@ -25,7 +19,7 @@ export function handleErrors (
 
 // return error details at response if not in production
 function getInfo (err) {
-  return isProdEnv
+  return !isProdEnv && !(err instanceof AppError)
     ? undefined
     : {
       details: err.message,
