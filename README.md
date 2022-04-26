@@ -86,5 +86,5 @@ curl --location --request POST 'http://localhost:3000/api/encrypter/rot13' \
 ### Tests
 - [jest](https://jestjs.io/) - JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun
 - [supertest](https://github.com/visionmedia/supertest) - HTTP assertions made easy via superagent.
-- [mongodb-memory-server](https://github.com/visionmedia/supertest) - MongoDB memory server for integrations test
+- [mongodb-memory-server](https://www.npmjs.com/package/mongodb-memory-server) - MongoDB memory server for integrations test
 
