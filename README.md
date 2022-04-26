@@ -26,7 +26,7 @@ Access `http://localhost:3000/api/` and you're ready to go!
 6. Run the application in development mode with `yarn dev`
 7. Access `http://localhost:<PORT>/api` and you're ready to go!
     > http://localhost:3000/api
-8. Encrypt your text:
+8. Encrypt/decrypt your text:
 ```sh
 curl --location --request POST 'http://localhost:3000/api/encrypter/rot13' \
 --header 'Content-Type: application/json' \
