@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node --es-module-specifier-resolution=node index.js",
-    "dev": "nodemon --es-module-specifier-resolution=node index.js",
+    "dev": "DEBUG=agent:* nodemon --es-module-specifier-resolution=node index.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --passWithNoTests --runInBand --forceExit --detectOpenHandles",
     "test:unit": "npm test -- --no-cache -c jest-unit.config.js",
     "test:unit:cov": "npm test -- --no-cache --silent --coverage  -c jest-unit.config.js",
