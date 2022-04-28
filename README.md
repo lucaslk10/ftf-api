@@ -1,4 +1,4 @@
-# Fund That Flip API
+# API for the test
 > Rot13 Encrypter API (Challenge)
 
 ## Development Environment Setup
