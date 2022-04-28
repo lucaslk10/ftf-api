@@ -1,6 +1,6 @@
 import t from 'tcomb'
 import { compose } from 'ramda'
-import { cleanData } from '../../helper'
+import { cleanData } from '../../../@shared/utils/clean-data'
 import { AppError } from '../../../infra/http/helpers/app-error'
 import { ConstantsEncryptRequestEntity } from './constants'
 
