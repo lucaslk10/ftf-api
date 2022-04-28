@@ -68,7 +68,6 @@ curl --location --request POST 'http://localhost:3000/api/encrypter/rot13' \
 - [Express-rate-limit](https://www.npmjs.com/package/express-rate-limit) - For limiting requests and being DDoS safe
 - [CORS](https://github.com/expressjs/cors) - a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 - [Compression](https://github.com/expressjs/compression) - Node.js compression middleware.
-- [Body-parser](https://github.com/expressjs/body-parser) - Node.js body parsing middleware.
 - [Mongoose](https://mongoosejs.com/) - MongoDB ODM Tool
 - [Nodemon](https://nodemon.io/) - Use for development file reload.
 - [Joi](https://joi.dev/) - For schema validation on routes
