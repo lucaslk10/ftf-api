@@ -1,4 +1,3 @@
-// setupReplicaSet.ts
 import { MongoMemoryServer } from 'mongodb-memory-server'
 
 export const setupMongoDB = () => {
