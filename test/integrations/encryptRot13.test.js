@@ -35,7 +35,7 @@ describe('Test Encrypt Rot13 Routes', () => {
     expect(response?.body?.text).toEqual(expectedResponse)
   })
 
-  test('should encrypt a text at /api/encrypter/rot13', async () => {
+  test('should throw error for text empty /api/encrypter/rot13', async () => {
     const payload = {
       text: ''
     }
@@ -46,6 +46,19 @@ describe('Test Encrypt Rot13 Routes', () => {
 
     expect(response.status).toBe(400)
     expect(response?.body?.message).toContain('"text" is not allowed to be empty')
+  })
+
+  test('should throw error for maximum length /api/encrypter/rot13', async () => {
+    const payload = {
+      text: 's'.repeat(1001)
+    }
+
+    const response = await request
+      .post('/api/encrypter/rot13')
+      .send(payload)
+
+    expect(response.status).toBe(400)
+    expect(response?.body?.message).toContain('"text" length must be less than or equal to 1000 characters long')
   })
 
   afterAll(async () => {
