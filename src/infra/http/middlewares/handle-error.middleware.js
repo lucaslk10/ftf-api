@@ -20,12 +20,12 @@ export function handleErrors (
 
 // return error details at response if not in production
 function getInfo (err) {
-  if(isProdEnv || err instanceof AppError) return undefined
+  if (isProdEnv || err instanceof AppError) return undefined
 
   return {
-      details: err.message,
-      stack: err.stack
-    }
+    details: err.message,
+    stack: err.stack
+  }
 }
 // log error if not in tests mode
 function logError (response, err) {
