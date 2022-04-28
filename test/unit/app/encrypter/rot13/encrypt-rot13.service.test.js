@@ -1,6 +1,7 @@
 import { EncryptRot13Service } from '../../../../../src/app/encrypter/services/rot13/encrypt-rot13.service'
 import { EncryptRequestRepositoryMock } from '../../../../__mocks__/infra/repositories/encrypt-request.repository'
 import { jest } from '@jest/globals'
+import { ConstantsEncryptRequestEntity } from '../../../../../src/domain/encrypter/entities/constants'
 
 const makeSut = () => {
   const encryptRequestRepo = new EncryptRequestRepositoryMock()
@@ -26,7 +27,7 @@ describe('Encrypt Rot13 - App Service Test', () => {
       await sut.execute(payload)
       expect(true).toBe(false)
     } catch (err) {
-      expect(err.message).toEqual('Text not provided')
+      expect(err.message).toEqual(ConstantsEncryptRequestEntity.VALIDATION.TEXT_NOT_PROVIDED)
     }
   })
   it('should call execute and repo with correct params', async () => {
